@@ -1,7 +1,16 @@
-<h1>Products#show</h1>
+<h1>Product Details</h1>
 
-<%= @product['name'] %>
-<%= format_numbers(@product['price_in_cents']) %>
+<%= link_to 'Back', products_path %>
+
+<p><%= @product['name'] %> - <%= format_numbers @product['alcohol_content'] %>%</p>
+
 <%= @product['primary_category'] %>
-<%= image_tag @product['image_url'] %>
+<%= @product['secondary_category'] %>
 <%= @product['origin'] %>
+
+<p>
+$<%= format_numbers(@product['price_in_cents']) %> for 
+<%= @product['package'] %></p>
+
+
+<%= image_tag @product['image_url'] %>

@@ -1,0 +1,10 @@
+<h1>Stores Index</h1>
+
+<ol>
+  <% @stores['result'].each do |store| %>
+    <div class="store">
+      <li><%= link_to store['name'], store_path(store['id']) %></li>
+      <%= store['address_line_1'] %>
+    </div>
+  <% end %>
+</ol>

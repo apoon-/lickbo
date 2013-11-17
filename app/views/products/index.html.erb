@@ -1,18 +1,14 @@
 <h1>Please Drink Responsibldaskfljasdf, NAH.</h1>
 
 <% @products['result'].each do |product| %>
-<p>
-  <%= link_to product['name'], product_path(product['id']) %>
-  $<%= format_numbers product['price_in_cents'] %>
-  <%= product['primary_category'] %></br>
-
-  <% if product['image_thumb_url'] == nil%> 
-    <%= image_tag ("http://www.definitivetech.com/images/products/product_image_not_available.gif") %> 
-  <% else %>
-    <%= image_tag product['image_thumb_url'] %>
-  <% end %>
-
-  <%= format_numbers product['alcohol_content'] %>%
-</p>
+  <div class="product">
+    <%= link_to product['name'], product_path(product['id']) %> - 
+    $<%= format_numbers product['price_in_cents'] %></br>
+      <% if product['image_thumb_url'] == nil %> 
+        <%= image_tag ("http://www.definitivetech.com/images/products/product_image_not_available.gif") %> 
+      <% else %>
+        <%= link_to image_tag(product['image_thumb_url']), product_path(product['id']) %>
+      <% end %>
+  </div>
 <% end %>
 

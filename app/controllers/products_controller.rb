@@ -3,7 +3,7 @@ require 'open-uri'
 class ProductsController < ApplicationController
 
   def index
-    @products = JSON.parse(open('http://lcboapi.com/products').read)
+    @products = JSON.parse(open('http://lcboapi.com/products?per_page=60').read)
   end
 
   def show
